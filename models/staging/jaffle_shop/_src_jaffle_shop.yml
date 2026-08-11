@@ -4,6 +4,11 @@ sources:
     schema: jaffle_shop  
     tables:
       - name: orders
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
         config: 
           freshness:
             warn_after:
@@ -14,3 +19,8 @@ sources:
               period: day
           loaded_at_field: _etl_loaded_at
       - name: customers
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
