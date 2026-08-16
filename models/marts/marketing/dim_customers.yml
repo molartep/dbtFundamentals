@@ -1,0 +1,27 @@
+models:
+  - name: dim_customers
+    description: >-
+      Customer dimension with one row per customer, enriched with order history and
+      lifetime value. Includes customers who have never placed an order; their order
+      dates and lifetime value are null, while number_of_orders is zero.
+    columns:
+      - name: customer_id
+        description: Primary key for the customer, sourced from the Jaffle Shop customers table.
+
+      - name: first_name
+        description: Customer's first name as recorded in the Jaffle Shop customers table.
+
+      - name: last_name
+        description: Customer's last name as recorded in the Jaffle Shop customers table.
+
+      - name: first_order_date
+        description: Earliest date on which the customer placed an order; null when the customer has no orders.
+
+      - name: most_recent_order_date
+        description: Most recent date on which the customer placed an order; null when the customer has no orders.
+
+      - name: number_of_orders
+        description: Total number of orders placed by the customer, set to zero when the customer has no orders.
+
+      - name: lifetime_value
+        description: Total successful payment amount across the customer's orders; null when no successful payment amount is available.
